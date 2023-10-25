@@ -1,0 +1,332 @@
+@import url(global.css);
+
+.header {
+  position: relative;
+  padding-top: 7rem;
+  background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+  padding: 16rem 0 50rem;
+  display: flex;
+  justify-content: center;
+}
+
+.header::after {
+  content: "";
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(0deg, var(--primary-color), transparent);
+}
+
+.header__content {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.header__channels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.header__title {
+  font-family: 'Raleway', sans-serif;
+  padding: 0 2rem;
+}
+
+.header__title span {
+  font-size: 2rem;
+}
+
+.header__title h1 {
+  font-size: 3rem;
+}
+
+.divider {
+  width: 70%;
+  max-width: 700px;
+  height: 5px;
+  background: var(--divider-bg-color);
+  margin: auto;
+}
+
+.offer p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.25rem;
+}
+
+.offer span {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+
+}
+
+.offer .price {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header__button {
+  animation: wiggle 2.2s linear infinite;
+}
+
+.text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  margin: 0 2rem 2rem;
+}
+
+.plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card-bg-color);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  height: 50rem;
+  max-width: 35rem;
+}
+
+.subscription {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.subscription__container h2,
+.catalog__container h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.subscription__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.subscription__container h2 {
+  margin: 0 1rem;
+
+}
+
+.subscription h3 {
+  font-size: 1.45rem;
+  font-weight: bold;
+}
+
+.subscription span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.subscription__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscription__plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subscription__card {
+  font-size: 1.25rem;
+}
+
+.plans ul {
+  height: 30rem;
+}
+
+.plans li {
+  list-style: none;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+
+.plans li::marker {
+  content: "+";
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
+
+button {
+  width: 100%;
+}
+
+.catalog {
+  display: flex;
+  justify-content: center;
+}
+
+.catalog__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 75rem;
+}
+
+.catalog__content {
+  display: grid;
+  grid-template-columns: repeat(6, 100%);
+  grid-auto-flow: column;
+  overflow: auto hidden;
+  gap: 2rem;
+}
+
+.catalog__card:hover {
+  transform: scale(1.05);
+}
+
+.catalog__card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid transparent;
+  transition: transform 0.8s, background 0.8s, border 1s;
+  border-radius: 1rem;
+}
+
+.catalog__card:hover .catalog__image {
+  opacity: 0;
+}
+
+.catalog__card:hover {
+  border: 2px solid var(--tertiary-color);
+}
+
+.catalog__image {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 2s;
+}
+
+.catalog__card:nth-child(1):hover {
+  background-image: url(../images/hbo-hover.webp);
+}
+
+.catalog__card:nth-child(2):hover {
+  background-image: url(../images/max-hover.webp);
+}
+
+.catalog__card:nth-child(3):hover {
+  background-image: url(../images/dc-hover.webp);
+}
+
+.catalog__card:nth-child(4):hover {
+  background-image: url(../images/wb-hover.webp);
+}
+
+.catalog__card:nth-child(5):hover {
+  background-image: url(../images/cn-hover.png);
+}
+
+.catalog__card:nth-child(6):hover {
+  background-image: url(../images/ucl-hover.webp);
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 481px) {
+  .catalog__content {
+    grid: repeat(3, 1fr)/ repeat(2, 1fr);
+    overflow: visible;
+  }
+ }
+
+@media screen and (min-width: 801px) {
+  .catalog__content {
+    grid: repeat(2, 1fr)/ repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1141px) {
+  .subscription__content {
+    flex-direction: row;
+    perspective-origin: top;
+    perspective: 2000px;
+  }
+
+.subscription{
+  background-image: url(../images/background-movies-series.png);
+  background-size: cover;
+  position: relative;
+}
+
+  .subscription__content:has(.subscription__card:nth-child(1):hover) .subscription__card:nth-child(2) {
+    transform: rotateY(-45deg);
+  }
+
+  .subscription__content:has(.subscription__card:nth-child(2):hover) .subscription__card:nth-child(1) {
+    transform: rotateY(45deg);
+  }
+
+  .subscription__card{
+    transition: transform 1s ease-in-out;
+  }
+
+  .subscription__plans {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}
+
+
+/* Animations */
+
+@keyframes wiggle {
+
+  0%,
+  10% {
+    transform: rotate(0);
+  }
+
+  15% {
+    transform: rotate(-15deg);
+  }
+
+  20% {
+    transform: rotate(10deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  30% {
+    transform: rotate(10deg);
+  }
+
+  35% {
+    transform: rotate(-10deg);
+  }
+
+  40%,
+  100% {
+    transform: rotate(0);
+  }
+}
